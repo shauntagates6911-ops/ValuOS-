@@ -24,3 +24,22 @@ void kernel_main(void) {
         __asm__ __volatile__("hlt");
     }
 }
+// ValuOS 32-bit entry
+#define VGA 0xB8000
+#define ATTR 0x0F
+
+static unsigned short *vga = (unsigned short *)VGA;
+
+void pm_entry(void) {
+    const char *msg = "ValuOS in 32-bit protected mode";
+    int i = 0;
+
+    while (msg[i]) {
+        vga[i] = ((unsigned short)ATTR << 8) | msg[i];
+        i++;
+    }
+
+    for (;;) {
+        __asm__ __volatile__("hlt");
+    }
+}

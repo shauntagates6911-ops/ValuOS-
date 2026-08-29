@@ -1,0 +1,40 @@
+# Build artifacts
+/build/
+/bin/
+/obj/
+/out/
+
+# Compiled binaries
+*.o
+*.obj
+*.elf
+*.bin
+*.iso
+*.img
+
+# Bootloader outputs
+*.map
+*.lst
+
+# Temporary files
+*.tmp
+*.log
+*.lock
+
+# Editor junk
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Toolchain caches
+.cache/
+.cargo/
+target/
+
+# QEMU stuff
+qemu.pid
+qemu.log
+
+# VSCode
+.vscode/
